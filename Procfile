@@ -1,0 +1,1 @@
+web: gunicorn red_rebel_tattoos.wsgi
