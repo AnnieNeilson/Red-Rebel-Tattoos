@@ -7,10 +7,11 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
-    artist = models.ForeignKey(User, on_delete=models.CASCADE, related_name="portfolio_post")
+    artist = models.ForeignKey(User, on_delete=models.CASCADE, related_name="artwork_post")
     slug = models.SlugField(max_length=200, unique=True)
     caption = models.CharField(max_length=100, unique=True)
     description = models.TextField()
+    status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
     tags = TaggableManager()
     likes = models.ManyToManyField(User, related_name="post_likes", blank=True)
