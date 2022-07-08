@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200&family=Koulen&display=swap');
+
+/*---------------------------------------Universal styles-----*/
+body{
+    font-family: "Exo", sans-serif;
+    background-color: #fafafa;
+    color:#574f4f;
+    font-weight: 800;
+}
+
+h1, h2, h3, h4, h5{
+    margin:0;
+    font-family: "Koulen", cursive;
+}
+/* ----------------------------------------------------Nav bar */
+.navbar-brand{
+    font-family: 'Koulen', cursive;
+    font-size: 30px;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+/* ----------------------------------------------------Header */
+
+.hero-image{
+    background: url(../images/hero-image.jpeg) no-repeat center center;
+    background-size: 100% auto;
+    min-height: 450px;
+    display:block;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    /* NEED MEDIA QUERIES FOR HEIGHT ADJUSTMENT FOR UNDER 700PX WIDTH */
+}
+.consultation-alert{
+    margin-bottom: 0;
+}
+
+header{
+    margin: 0;
+    padding: none;
+    color:#fafafa;
+    text-align: center;
+    background-color: black;
+}
+
+header h1{
+    padding-top: 50px;
+    font-size: 75px;
+}
+
+header h2{
+    font-weight: 700;
+    font-family: "Exo", sans-serif;
+}
+
+.main-header{
+    padding-bottom: 48px;
+    height:300px;
+    background: url("../images/header-photo.jpg") no-repeat center;
+    background-size: 600px;
+    background-position: 500px;
+}
+
+/* ----------------------------------------------------Artwork Page */
+
+/* .card-body{
+    color: #fafafa
+} */
+
+.artwork-rows{
+    color: #fafafa;
+    text-decoration: none;
+
+}
+
+/* ----------------------------------------------------Footer */
+.footer{
+    /* background-color: #353535; */
+    text-align: center;
+    color:#fafafa;
+    height: 150px;
+}
+
+.social-media-icons{
+    font-size: 30px;
+    color:#fafafa;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.footer-content{
+    padding-top: 35px;
+}

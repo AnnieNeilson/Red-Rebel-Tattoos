@@ -5,11 +5,17 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
-    list_display = ('caption', 'slug', 'created_on')
+    list_display = ('caption', 'slug', 'created_on', 'status')
     search_fields = ['caption', 'description']
     prepopulated_fields = {'slug': ('caption',)}
     summernote_fields = ('description')
     list_filter = ('status', 'created_on')
+    actions = ['publish_posts']
+
+    def publish_posts(self, request, queryset):
+        queryset.update(status=1)
+
+    
 
 
 @admin.register(Comment)
