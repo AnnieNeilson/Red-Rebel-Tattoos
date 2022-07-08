@@ -66,15 +66,67 @@ header h2{
 
 /* ----------------------------------------------------Artwork Page */
 
-/* .card-body{
-    color: #fafafa
-} */
+.card-img-top {
+    width: 100%;
+    height: 35vw;
+    object-fit: cover;
+}
 
 .artwork-rows{
     color: #fafafa;
     text-decoration: none;
 
 }
+/* --------------------------POST PAGE------------------------*/
+
+.post-image{
+    height: 50vh;
+    
+}
+
+
+/* --------------------------HOME PAGE------------------------*/
+
+.home-sections{
+    margin-top: 24px;
+    padding-bottom: 24px;
+    text-align: center;
+}
+
+#features{
+    margin-top: 24px;
+    text-align: center;
+    padding-bottom: none;
+}
+
+.feature-link{
+    padding-top: 24px;
+    padding-bottom: 12px;
+    height: 200px;
+}
+
+.feature-link > *{
+    padding: inherit;
+}
+
+#art-link{
+    background-color: #9e0000;
+    color:#ffffff;
+    padding-bottom:0;
+}
+
+#faq-link{
+    background-color: #810000;
+    color:#dadada;
+    padding-bottom:0;
+}
+
+#booking-link{
+    background-color: #4e0000;
+    color:#e7e7e7;
+    padding-bottom:0;
+}
+
 
 /* ----------------------------------------------------Footer */
 .footer{

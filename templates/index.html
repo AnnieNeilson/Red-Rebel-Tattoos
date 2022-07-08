@@ -2,6 +2,71 @@
 
 {% block content %}
 
+<header>
+    <div class="hero-image">
+        <h1>Red Rebel Tattoo Parlour</h1>
+        <h2>Qualified Tattooists, Quality Tattoos</h2>
+    </div>
+</header>
+
+<article class="container">
+    <!-- About us-->
+    <section id="about-us" class="home-sections">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    </section>
+    <!-- /.about us-->
+    <!-- Quotes -->
+    <section id="quotes" class="home-sections">
+        <h2>Our Customers Say...</h2>
+        <div class="row">
+            <blockquote class="blockquote col-md-4">
+                <p class="mb-0"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right"></i></p>
+                <footer class="blockquote-footer">Kirsty A</footer>
+            </blockquote>
+            <blockquote class="blockquote col-md-4">
+                <p class="mb-0"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right"></i></p>
+                <footer class="blockquote-footer">Kirsty B</footer>
+            </blockquote>
+            <blockquote class="blockquote col-md-4">
+                <p class="mb-0"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right"></i></p>
+                <footer class="blockquote-footer">Kirsty C</footer>
+            </blockquote>
+        </div>
+    </section>
+    <!-- /.quotes-->
+</article>
+<div class="container-fluid">
+    <!-- Features -->
+    <section id="features">
+        <div class="row">
+            <div class="col-md-4 feature-link" id="art-link">
+                <h3>Artwork <i class="fa fa-palette"></i></h3>
+                <p>Check out our artwork <a href="#">here...</a></p>
+            </div>
+            <div class="col-md-4 feature-link" id="faq-link">
+                <h3>Have a Question? <i class="fa fa-comments"></i></h3>
+                <p>Get in touch <a href="#">here...</a></p>
+            </div>
+            <div class="col-md-4 feature-link" id="booking-link">
+                <h3>Book Now! <i class="fa fa-calendar-check"></i></h3>
+                <p>Get your journey with us started <a href="#">here...</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- /.features -->
+</div>
+
+
 <div class="container-fluid">
     <div class="row">
 
@@ -26,7 +91,6 @@
                             <a href="#" class="post-link">
                                 <h2 class="card-title">{{ post.caption }}</h2>
                             </a>
-                            <hr />
                             <p class="card-text ">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
@@ -56,9 +120,3 @@
     {% endif %}
 </div>
 {%endblock%}
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Secur
