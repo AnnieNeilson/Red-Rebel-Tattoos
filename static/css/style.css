@@ -3,8 +3,8 @@
 /*---------------------------------------Universal styles-----*/
 body{
     font-family: "Exo", sans-serif;
-    background-color: #fafafa;
-    color:#574f4f;
+    background-color: #6d0d0d;
+    color:#d8d2d2;
     font-weight: 800;
 }
 
@@ -16,6 +16,11 @@ h1, h2, h3, h4, h5{
 .navbar-brand{
     font-family: 'Koulen', cursive;
     font-size: 30px;
+    color:#9e0000 ;
+}
+
+.nav-link{
+    color: #fafafa;
 }
 
 .navbar-toggler{
@@ -77,6 +82,10 @@ header h2{
     text-decoration: none;
 
 }
+
+.card{
+    border: none;
+}
 /* --------------------------POST PAGE------------------------*/
 
 .post-image{
@@ -127,6 +136,12 @@ header h2{
     padding-bottom:0;
 }
 
+/* --------------------------------------Authentication pages */
+
+.primaryAction{
+    background-color: #292222;
+    color:#d8d2d2;
+}
 
 /* ----------------------------------------------------Footer */
 .footer{
