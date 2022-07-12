@@ -1,10 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 
+{% load crispy_forms_tags %}
+
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-12 masthead-text">
-                <h1 class="post-title">{{ post.caption }}
+                <h1 class="post-title mt-3">{{ post.caption }}
                 </h1>
                 <p class="post-subtitle">{{ post.artist }} | {{ post.created_on }}</p>
             </div>
@@ -50,14 +52,15 @@
         </div>
     </div>
     <div class="row">
-        <div class="col card mb-4  mt-3 post-details-card">
-            <h3>Comments:</h3>
+        <div class="col-md-6 card mb-4  mt-3 post-details-card">
+            
             <div class="card-body">
+                <h3>Comments:</h3>
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
-                        { comment.name }}
-                        <span class=" text-muted font-weight-normal">
+                        {{ comment.name }}
+                        <span class=" font-weight-normal">
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
@@ -66,9 +69,24 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-6 card mb-4  mt-3 post-details-card">
             <div class="card-body">
-                <!-- For later -->
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
+                
+                {% if user.is_authenticated %}
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="primaryAction">Submit</button>
+                </form>
+                {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>
