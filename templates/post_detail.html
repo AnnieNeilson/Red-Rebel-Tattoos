@@ -9,27 +9,29 @@
                 <p class="post-subtitle">{{ post.artist }} | {{ post.created_on }}</p>
             </div>
         </div>
-        <div class="row post-image">
-            <div class="d-none d-md-block img-fluid">
+        <div class="row">
+            <div class="col-md-12 img-fluid ">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%"
+                    class=" post-image">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" width="100%">
+                <img src="{{ post.featured_image.url }}" width="100%" class="post-image">
                 {% endif %}
             </div>
+            
         </div>
     </div>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col-md-12 card mb-4  mt-3 post-details-card">
             <div class="card-body">
-                <p class="card-text ">{{ post.description | safe }}</p>
+                <p class="card-text">{{ post.description | safe }}</p>
                 <div class="row">
-
                     <div class="col-1">
-                        <strong class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }}</strong>
+                        <strong class="text-secondary"><i
+                                class="far fa-heart"></i>{{ post.number_of_likes }}</strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
@@ -48,7 +50,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col card mb-4  mt-3 ">
+        <div class="col card mb-4  mt-3 post-details-card">
             <h3>Comments:</h3>
             <div class="card-body">
                 {% for comment in comments %}

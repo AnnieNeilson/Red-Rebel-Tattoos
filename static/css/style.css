@@ -12,6 +12,11 @@ h1, h2, h3, h4, h5{
     margin:0;
     font-family: "Koulen", cursive;
 }
+
+.center-text{
+    text-align: center;
+}
+
 /* ----------------------------------------------------Nav bar */
 .navbar-brand{
     font-family: 'Koulen', cursive;
@@ -69,6 +74,10 @@ header h2{
     background-position: 500px;
 }
 
+.title-block {
+    height: 18vh;
+}
+
 /* ----------------------------------------------------Artwork Page */
 
 .card-img-top {
@@ -89,8 +98,14 @@ header h2{
 /* --------------------------POST PAGE------------------------*/
 
 .post-image{
-    height: 50vh;
-    
+    max-height: 80vh;
+    object-fit:scale-down;
+    justify-content: center; 
+    background-color: #292222; 
+}
+
+.post-details-card{
+    color:#141414;
 }
 
 
@@ -141,6 +156,10 @@ header h2{
 .primaryAction{
     background-color: #292222;
     color:#d8d2d2;
+}
+
+.signout-column h1 p form{
+    text-align: center;
 }
 
 /* ----------------------------------------------------Footer */
