@@ -2,13 +2,15 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-3 left title-block">
-            <h1 class="center-text">ArtWork</h1>
-            <p class="center-text">Check out the wonderful artwork done by our talented tattooists</p>
-        </div>
+<header>
+    <div class="main-header">
+        <h1 class="center-text light-text">ArtWork</h1>
+        <p class="center-text light-text">Check out the wonderful artwork done by our talented tattooists</p>
+        
     </div>
+</header>
+
+<div class="container-fluid">
     <div class="row">
         <!-- Artwork Entries Column -->
         <div class="col-12 mt-3 left">
@@ -20,7 +22,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    src="https://res.cloudinary.com/dl7iptr4y/image/upload/v1658136194/hero-image_ggid7b.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}

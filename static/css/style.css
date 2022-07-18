@@ -4,18 +4,21 @@
 body{
     font-family: "Exo", sans-serif;
     background-color: #6d0d0d;
-    color:#d8d2d2;
     font-weight: 800;
 }
 
 h1, h2, h3, h4, h5{
-
     font-family: "Koulen", cursive;
 }
 
+.light-text{
+    color:#d8d2d2;
+}
 .center-text{
     text-align: center;
 }
+
+
 
 /* ----------------------------------------------------Nav bar */
 .navbar-brand{
@@ -35,7 +38,7 @@ h1, h2, h3, h4, h5{
 /* ----------------------------------------------------Header */
 
 .hero-image{
-    background: url(../images/hero-image.jpeg) no-repeat center center;
+    background: url('https://res.cloudinary.com/dl7iptr4y/image/upload/v1658136194/hero-image_ggid7b.jpg') no-repeat center;
     background-size: 100% auto;
     min-height: 450px;
     display:block;
@@ -69,7 +72,7 @@ header h2{
 .main-header{
     padding-bottom: 48px;
     height:300px;
-    background: url("../images/header-photo.jpg") no-repeat center;
+    background: url("https://res.cloudinary.com/dl7iptr4y/image/upload/v1658137215/header-photo_ll6h0s.jpg") no-repeat center;
     background-size: 600px;
     background-position: 500px;
 }
@@ -104,10 +107,14 @@ header h2{
     background-color: #292222; 
 }
 
-.post-details-card{
+/* .post-details-card{
     color:#141414;
-}
+} */
 
+.like_button{
+    border: none;
+    background-color: inherit;
+}
 
 /* --------------------------HOME PAGE------------------------*/
 
@@ -161,6 +168,10 @@ header h2{
 .signout-column h1 p form{
     text-align: center;
 }
+
+/* --------------------------------------CONTACT PAGE-------- */
+
+
 
 /* ----------------------------------------------------Footer */
 .footer{

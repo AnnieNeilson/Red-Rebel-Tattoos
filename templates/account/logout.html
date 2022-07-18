@@ -8,9 +8,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h1 class="center-text">{% trans "Sign Out" %}</h1>
+      <h1 class="center-text light-text">{% trans "Sign Out" %}</h1>
 
-      <p class="center-text">{% trans 'Are you sure you want to sign out?' %}</p>
+      <p class="center-text light-text">{% trans 'Are you sure you want to sign out?' %}</p>
 
       <form method="post" action="{% url 'account_logout' %}" class="center-text">
         {% csrf_token %}

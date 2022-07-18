@@ -17,7 +17,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-lg bg-dark">
-        <a class="navbar-brand" href="{% url 'artwork' %}">Red Rebel</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Red Rebel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,16 +26,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'artwork' %}">Artwork</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Bookings</a>
+                    <a class="nav-link" href="{% url 'booking' %}">Bookings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                 </li>
                 
             </ul>
