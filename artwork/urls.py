@@ -1,5 +1,6 @@
-from . import views
 from django.urls import path
+from . import views
+
 
 urlpatterns = [
     path('artwork', views.PostList.as_view(), name='artwork'),

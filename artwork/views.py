@@ -1,24 +1,41 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from .models import Post
-from .forms import CommentForm
 from django.http import HttpResponseRedirect
+from .models import Post
+from .forms import CommentForm, ContactForm
 
 
 class HomePage(generic.TemplateView):
     template_name = 'index.html'
 
-class ContactPage(generic.TemplateView):
+
+class ContactPage(View):
     template_name = 'contact.html'
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            "contact.html",
+            {
+                "contact_form": ContactForm(),
+            },)
+
+    def post(self, request, *args, **kwargs):
+        contact_form = ContactForm(data=request.POST)
+        if contact_form.is_valid():
+            contact_form.save() 
+        contact_form = ContactForm()
+        return render(request, 'contact.html', {'contact_form': contact_form})
 
 class BookingPage(generic.TemplateView):
     template_name = 'booking.html'
+
 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'artwork.html'
     paginate_by = 9
+
 
 class PostDetail(View):
 
@@ -73,6 +90,7 @@ class PostDetail(View):
             },
         )
 
+
 class PostLike(View):
 
     def post(self, request, slug):
@@ -84,4 +102,5 @@ class PostLike(View):
             post.likes.add(request.user)
         
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
 

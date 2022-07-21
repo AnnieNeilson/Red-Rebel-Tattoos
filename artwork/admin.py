@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
+from .models import Post, Comment, Contact
+
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
@@ -15,8 +16,6 @@ class PostAdmin(SummernoteModelAdmin):
     def publish_posts(self, request, queryset):
         queryset.update(status=1)
 
-    
-
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
@@ -28,3 +27,15 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'subject', 'sent', 'replied')
+    list_filter = ('replied',)
+    search_fields = ['name', 'email', 'subject']
+    actions = ['mark_as_replied']
+
+    def mark_as_replied(self, request, queryset):
+        queryset.update(replied=True)

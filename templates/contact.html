@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <header>
     <div class="main-header">
         <h1>Contact</h1>
@@ -14,7 +16,7 @@
         <div class="col-md-12 center-text">
             <div class="col">
                 <h2 class="text-center contact-article">Contact Us!</h2>
-                <p class="text-center ">Feel free to pop in anytime! We have several
+                <p class="text-center ">Feel free to pop in anytime!<br> We have several
                     portfolios you can peruse. You can book your free consultation in person, over the phone or online
                     <a href="#">here</a><br>
                     <small>Our Tattooists work flexible shifts,
@@ -43,6 +45,19 @@
 
 
 
+        </div>
+        <div>
+            <h1>Contact</h1>
+            <h4>Contact us directly if you have any questions</h4>
+            <p>
+                Please write your name, email address and a message below if you have any questions.
+                One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
+            </p>
+            <form method="post" style="margin:80px">
+                {{ contact_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="primaryAction">Submit</button>
+            </form>
         </div>
     </div>
 </article>
