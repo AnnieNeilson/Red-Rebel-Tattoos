@@ -11,6 +11,10 @@ h1, h2, h3, h4, h5{
     font-family: "Koulen", cursive;
 }
 
+.dark-text{
+    color:#141414;
+}
+
 .light-text{
     color:#d8d2d2;
 }
@@ -60,7 +64,7 @@ header{
 }
 
 header h1{
-    padding-top: 50px;
+    padding-top: 10px;
     font-size: 75px;
 }
 
@@ -70,7 +74,7 @@ header h2{
 }
 
 .main-header{
-    padding-bottom: 48px;
+    margin-bottom: 20px;
     height:300px;
     background: url("https://res.cloudinary.com/dl7iptr4y/image/upload/v1658137215/header-photo_ll6h0s.jpg") no-repeat center;
     background-size: 600px;
@@ -106,10 +110,6 @@ header h2{
     justify-content: center; 
     background-color: #292222; 
 }
-
-/* .post-details-card{
-    color:#141414;
-} */
 
 .like_button{
     border: none;

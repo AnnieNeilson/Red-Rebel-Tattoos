@@ -13,53 +13,55 @@
 
 <article class="container contact-article light-text">
     <div class="row">
-        <div class="col-md-12 center-text">
-            <div class="col">
-                <h2 class="text-center contact-article">Contact Us!</h2>
-                <p class="text-center ">Feel free to pop in anytime!<br> We have several
-                    portfolios you can peruse. You can book your free consultation in person, over the phone or online
-                    <a href="#">here</a><br>
-                    <small>Our Tattooists work flexible shifts,
-                        if you would like to see a specific Tattooist their availability may vary.</small>
-                </p>
-                <div class="contact-info text-center">
-                    <div class="row">
-                        <div class="col-md-12">Phone: 555 7477 005</div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">Email: redrebeltattoos@email.com</div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">Address: 100 Green's Place,<br>South Shields,<br>South Tyneside,<br>NE33 2AY</div>
-                    </div>
-                        
+        <div class="col-md-4">
+            <div class="card bg-dark" style="width: 90%;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2288.1296953854194!2d-1.4331885845320569!3d55.005891556814895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e6ee78f14dd13%3A0x4087836c7d09f4d8!2s100%20Green&#39;s%20Pl%2C%20South%20Shields%20NE33%202AY!5e0!3m2!1sen!2suk!4v1652133824785!5m2!1sen!2suk"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="contact-map card-img-top"></iframe>
+                <div class="card-body ">
+                    <h2 class="text-center card-text">Find Us!</h2>
+                    <p class="card-text">
+                        <div class="contact-info text-center">
+                            <div class="row">
+                                <div class="col-md-12">Phone: 555 7477 005</div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">Email: redrebeltattoos@email.com</div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">Address: 100 Green's Place,<br>South Shields,<br>South
+                                    Tyneside,<br>NE33 2AY</div>
+                            </div>
+
+                        </div>
+                    </p>
                 </div>
             </div>
-            <h2 class="text-center contact-article">Find Us!</h2>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2288.1296953854194!2d-1.4331885845320569!3d55.005891556814895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e6ee78f14dd13%3A0x4087836c7d09f4d8!2s100%20Green&#39;s%20Pl%2C%20South%20Shields%20NE33%202AY!5e0!3m2!1sen!2suk!4v1652133824785!5m2!1sen!2suk"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade" class="contact-map"></iframe>
-
-
-
         </div>
-        <div>
-            <h1>Contact</h1>
-            <h4>Contact us directly if you have any questions</h4>
+        <div class="col-md-8 text-center">
+            <h4>Use the form below to contact us directly</h4>
             <p>
                 Please write your name, email address and a message below if you have any questions.
-                One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
+                One of our staff members will be happy to contact you directly and answer your questions as soon as
+                possible.
             </p>
-            <form method="post" style="margin:80px">
+            <form method="post" style="margin:50px">
                 {{ contact_form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="primaryAction">Submit</button>
             </form>
         </div>
     </div>
+
+    <p class="text-center ">Feel free to pop in anytime!<br> We have several
+        portfolios you can peruse. You can book your free consultation in person, over the phone or online
+        <a href="#">here</a><br>
+        <small>Our Tattooists work flexible shifts,
+            if you would like to see a specific Tattooist their availability may vary.</small>
+    </p>
 </article>
 
 
