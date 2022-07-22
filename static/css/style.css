@@ -22,7 +22,11 @@ h1, h2, h3, h4, h5{
     text-align: center;
 }
 
-
+.alert {
+    position:absolute;
+    z-index: 1;
+    width:inherit;
+}
 
 /* ----------------------------------------------------Nav bar */
 .navbar-brand{
