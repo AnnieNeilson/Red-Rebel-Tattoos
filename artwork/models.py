@@ -76,4 +76,5 @@ class Booking(models.Model):
     date = models.DateField()
     message = models.TextField()
     sent = models.DateTimeField(auto_now_add=True)
+    replied = models.BooleanField(default=False)
     

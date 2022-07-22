@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Post, Comment, Contact
+from .models import Post, Comment, Contact, Booking
 
 
 @admin.register(Post)
@@ -31,6 +31,18 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'subject', 'sent', 'replied')
+    list_filter = ('replied',)
+    search_fields = ['name', 'email', 'subject']
+    actions = ['mark_as_replied']
+
+    def mark_as_replied(self, request, queryset):
+        queryset.update(replied=True)
+
+
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'subject', 'sent', 'replied')
     list_filter = ('replied',)

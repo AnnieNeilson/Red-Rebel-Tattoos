@@ -25,8 +25,10 @@ class BookingPage(View):
     def post(self, request, *args, **kwargs):
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
+            # booking_form.instance.email = request.user.email
+            # booking_form.instance.name = request.user.username
             booking_form.save() 
-        booking_form = BookingForm()
+        
         return render(request, 'booking_successful.html',)
 
 
