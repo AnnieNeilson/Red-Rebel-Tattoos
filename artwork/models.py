@@ -46,3 +46,34 @@ class Contact(models.Model):
     body = models.TextField()
     sent = models.DateTimeField(auto_now_add=True)
     replied = models.BooleanField(default=False)
+
+
+ARTIST_CHOICES = (
+    ('becky', 'Becky Johnson'),
+    ('alex', 'Alex Anderson'),
+    ('john', 'John Masters'),
+    ('alison', 'Alison Taylor'),
+    ('jasmine', 'Jasmine Evans'),
+    ('david', 'David Walker'),
+    ('any', 'Any')
+)
+
+
+SUBJECT_CHOICES = (
+    ('consultation', 'Free Consultation'),
+    ('new', 'New Inquiry'),
+    ('reschedule', 'Reschedule Appointment'),
+    ('aftercare', 'Aftercare Inquiry'),
+    ('other', 'Other'),
+)
+
+
+class Booking(models.Model):
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    artist = models.CharField(max_length=20, choices=ARTIST_CHOICES, default='any')
+    subject = models.CharField(max_length=13, choices=SUBJECT_CHOICES, default='other')
+    date = models.DateField()
+    message = models.TextField()
+    sent = models.DateTimeField(auto_now_add=True)
+    

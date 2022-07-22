@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5{
     text-align: center;
 }
 
-.alert {
+#msg {
     position:absolute;
     z-index: 1;
     width:inherit;
@@ -173,7 +173,11 @@ header h2{
     text-align: center;
 }
 
+/* #signup_form input{
+    margin-left: 10px;
+} */
 /* --------------------------------------CONTACT PAGE-------- */
+
 
 
 

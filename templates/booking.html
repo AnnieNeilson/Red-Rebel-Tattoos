@@ -2,13 +2,33 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <header>
     <div class="main-header">
         <h1>Booking</h1>
         <h2>Start your journey with us today!</h2>
     </div>
 </header>
-<!-- 
-put in a contact form with options, topics etc look into calendar also  -->
+
+<div class="container light-text text-center">
+    {% if user.is_authenticated %}
+
+    <h4>Use the form below to get in touch.</h4>
+    <p>
+        Please note this form is intended for booking inquiries, for general contact
+        check out our <a href="{% url 'contact' %}">Contact Page</a>
+    </p>
+    <form method="post" style="margin:50px">
+        {{ booking_form | crispy }}
+        {% csrf_token %}
+        <button type="submit" class="primaryAction">Submit</button>
+    </form>
+
+    {% else %}
+    <h3>Please <a href="{% url 'account_login' %}">Sign In</a> or <a href="{% url 'account_signup' %}">Sign Up</a> to submit a booking
+        inquiry.</h3>
+    {% endif %}
+</div>
 
 {% endblock %}

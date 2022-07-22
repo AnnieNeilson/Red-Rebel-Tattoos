@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.messages import constants as messages
 from .models import Post
-from .forms import CommentForm, ContactForm
+from .forms import CommentForm, ContactForm, BookingForm
 
 
 
@@ -11,8 +11,28 @@ class HomePage(generic.TemplateView):
     template_name = 'index.html'
 
 
+class BookingPage(View):
+    template_name = 'booking.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            "booking.html",
+            {
+                "booking_form": BookingForm(),
+            },)
+
+    def post(self, request, *args, **kwargs):
+        booking_form = BookingForm(data=request.POST)
+        if booking_form.is_valid():
+            booking_form.save() 
+        booking_form = BookingForm()
+        return render(request, 'booking.html', {'booking_form': booking_form})
+
+
 class ContactPage(View):
     template_name = 'contact.html'
+
     def get(self, request, *args, **kwargs):
         return render(
             request,
@@ -27,9 +47,6 @@ class ContactPage(View):
             contact_form.save() 
         contact_form = ContactForm()
         return render(request, 'contact.html', {'contact_form': contact_form})
-
-class BookingPage(generic.TemplateView):
-    template_name = 'booking.html'
 
 
 class PostList(generic.ListView):
