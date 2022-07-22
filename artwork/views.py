@@ -27,7 +27,7 @@ class BookingPage(View):
         if booking_form.is_valid():
             booking_form.save() 
         booking_form = BookingForm()
-        return render(request, 'booking.html', {'booking_form': booking_form})
+        return render(request, 'booking_successful.html',)
 
 
 class ContactPage(View):
@@ -46,7 +46,7 @@ class ContactPage(View):
         if contact_form.is_valid():
             contact_form.save() 
         contact_form = ContactForm()
-        return render(request, 'contact.html', {'contact_form': contact_form})
+        return render(request, 'contact_successful.html',)
 
 
 class PostList(generic.ListView):

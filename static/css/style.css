@@ -44,6 +44,11 @@ h1, h2, h3, h4, h5{
 }
 
 /* ----------------------------------------------------Header */
+.consultation-alert{
+    position:absolute;
+    width: 100%;
+    z-index: 1;
+}
 
 .hero-image{
     background: url('https://res.cloudinary.com/dl7iptr4y/image/upload/v1658136194/hero-image_ggid7b.jpg') no-repeat center;
@@ -68,7 +73,7 @@ header{
 }
 
 header h1{
-    padding-top: 10px;
+    padding-top: 50px;
     font-size: 75px;
 }
 
@@ -79,6 +84,7 @@ header h2{
 
 .main-header{
     margin-bottom: 20px;
+    
     height:300px;
     background: url("https://res.cloudinary.com/dl7iptr4y/image/upload/v1658137215/header-photo_ll6h0s.jpg") no-repeat center;
     background-size: 600px;
