@@ -134,6 +134,12 @@ header h2{
     text-align: center;
 }
 
+.review-quote{
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+}
+
 #features{
     margin-top: 24px;
     text-align: center;

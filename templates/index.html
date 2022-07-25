@@ -21,16 +21,17 @@
         <h2>Welcome To Red Rebel Tattoos</h2>
         <p id="about-us-text">
             We are a team of professional tattooists, together we have over 100 years in tattooing experience!
-            <br>We are based in South Shields, <a href="{% url 'contact' %}">click here</a> to find us! 
+            <br>We are based in South Shields, <a href="{% url 'contact' %}">click here</a> to find us!
             We have been tattooing Sand Dancers and beyond for over 25 years.
-            We cover a broad range of styles, here at Red Rebel Tattoos you can be sure to find 
-            the design you are looking for. In our studio we have physical copies our each of our team member's portfolios.
+            We cover a broad range of styles, here at Red Rebel Tattoos you can be sure to find
+            the design you are looking for. In our studio we have physical copies our each of our team member's
+            portfolios.
             Feel free to pop in anytime to peruse our work (we also have excellent coffee!)
-            We offer free consultations, whether this is your first tattoo or your fiftieth. 
-            You can use our <a href="{% url 'booking' %}">booking form</a> to arrange a consultation with a 
+            We offer free consultations, whether this is your first tattoo or your fiftieth.
+            You can use our <a href="{% url 'booking' %}">booking form</a> to arrange a consultation with a
             specific tattooist, if you have someone in mind!
             <br>
-            <br>We pride ourselves on being a 5 star local health 
+            <br>We pride ourselves on being a 5 star local health
             authority registered studio. We carry out all tattooing to the highest standard.
         </p>
     </section>
@@ -38,21 +39,31 @@
     <!-- Quotes -->
     <section id="quotes" class="home-sections">
         <h2>Our Customers Say...</h2>
-        <div class="row">
-            <blockquote class="blockquote col-md-4">
-                <p class="mb-0"><i class="fa fa-quote-left"></i> Hugely recommend Red Rebel Tattoo Studio, the place has such a love atmosphere. John did an amazing job of my tattoo which was to remember my late grandma! I love it so much. Thanks guys!<i class="fa fa-quote-right"></i></p>
-                <footer class="blockquote-footer">Dominika</footer>
-            </blockquote>
-            <blockquote class="blockquote col-md-4">
-                <p class="mb-0"><i class="fa fa-quote-left"></i> Love these guys! I've been getting tattooed here since 2015. Becky always does an amazing job, and it's always great seeing everyone
-                    <i class="fa fa-quote-right"></i></p>
-                <footer class="blockquote-footer">Annie</footer>
-            </blockquote>
-            <blockquote class="blockquote col-md-4">
-                <p class="mb-0"><i class="fa fa-quote-left"></i> I'm gonna turn this into a carousel that takes reviews submitted to the site once they've been approved <i class="fa fa-quote-right"></i></p>
-                <footer class="blockquote-footer">Me</footer>
-            </blockquote>
-        </div>
+        <div id="review-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {% for review in reviews %}
+                {% if forloop.first %}
+                <div class="carousel-item active review-quote">
+                    {% else %}
+                    <div class="carousel-item review-quote">
+                        {% endif %}
+                        <blockquote class="blockquote">
+                            <p class="mb-0"><i class="fa fa-quote-left"></i> {{ review.body }} <i
+                                    class="fa fa-quote-right"></i></p>
+                            <footer class="blockquote-footer">{{ review.name }}</footer>
+                        </blockquote>
+                    </div>
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
     </section>
     <!-- /.quotes-->
 </article>

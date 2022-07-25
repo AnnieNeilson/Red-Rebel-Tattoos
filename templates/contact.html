@@ -44,8 +44,8 @@
                 </div>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2288.1296953854194!2d-1.4331885845320569!3d55.005891556814895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e6ee78f14dd13%3A0x4087836c7d09f4d8!2s100%20Green&#39;s%20Pl%2C%20South%20Shields%20NE33%202AY!5e0!3m2!1sen!2suk!4v1652133824785!5m2!1sen!2suk"
-                     style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" class="contact-map card-img-top"></iframe>
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    class="contact-map card-img-top"></iframe>
 
             </div>
             <br>
@@ -60,11 +60,32 @@
             <form method="post" style="margin:50px">
                 {{ contact_form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="primaryAction">Submit</button>
+                <button type="submit" name="contact" class="primaryAction">Submit</button>
             </form>
         </div>
     </div>
     <br>
+    {% if reviewed %}
+    <div class="alert alert-success" role="alert">
+        Your review is awaiting approval
+    </div>
+    {% else %}
+    
+    <div class="text-center">
+        <h3>Already Customer?</h3>
+        {% if user.is_authenticated %}
+        <p>Leave us a review!</p>
+        <form method="post" style="margin:50px">
+            {{ review_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" name="review" class="primaryAction">Submit</button>
+        </form>
+        {% else %}
+        <h3>Please <a href="{% url 'account_login' %}">Sign In</a> or <a href="{% url 'account_signup' %}">Sign Up</a> to leave a review</h3>
+        <br>
+    </div>
+    {% endif %}
+    {% endif %}
 </article>
 
 

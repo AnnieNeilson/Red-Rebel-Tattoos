@@ -1,14 +1,22 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
-from .forms import CommentForm, ContactForm, BookingForm
+from .models import Post, Review
+from .forms import CommentForm, ContactForm, BookingForm, ReviewForm
 
 
 
-class HomePage(generic.TemplateView):
+class HomePage(View):
     template_name = 'index.html'
 
+    def get(self, request, *args, **kwargs):
+        reviews = Review.objects.filter(approved=True)
+        return render(
+            request,
+            "index.html",
+            {
+                "reviews": reviews,
+            },)
 
 class BookingPage(View):
     template_name = 'booking.html'
@@ -47,20 +55,40 @@ class ContactPage(View):
             "contact.html",
             {
                 "contact_form": ContactForm(),
+                "review_form": ReviewForm(),
+                "reviewed" : False,
             },)
 
     def post(self, request, *args, **kwargs):
-        contact_form = ContactForm(data=request.POST)
-        if contact_form.is_valid():
-            contact_form.save() 
-            return render(request, 'contact_successful.html',)
-        contact_form = ContactForm()
-        return render(
-            request,
-            "contact.html",
-            {
-                "contact_form": ContactForm(),
-            },)
+        if 'contact' in request.POST:
+            contact_form = ContactForm(data=request.POST)
+            if contact_form.is_valid():
+                contact_form.save() 
+                return render(request, 'contact_successful.html',)
+        elif 'review' in request.POST:
+            review_form = ReviewForm(data=request.POST)
+            if review_form.is_valid():
+                review_form.instance.email = request.user.email
+                review_form.instance.name = request.user.username
+                review_form.save() 
+                return render(
+                    request,
+                    "contact.html",
+                    {
+                        "contact_form": ContactForm(),
+                        "review_form": ReviewForm(),
+                        "reviewed" : True,
+                    },)
+        else:
+            contact_form = ContactForm()
+            review_form = ReviewForm()
+            return render(
+                request,
+                "contact.html",
+                {
+                    "contact_form": ContactForm(),
+                    "review_form": ReviewForm(),
+                },)
 
 
 class PostList(generic.ListView):
