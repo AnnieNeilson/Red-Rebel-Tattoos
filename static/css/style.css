@@ -107,7 +107,6 @@ header h2{
 .artwork-rows{
     color: #fafafa;
     text-decoration: none;
-
 }
 
 .card{
@@ -185,8 +184,9 @@ header h2{
 } */
 /* --------------------------------------CONTACT PAGE-------- */
 
-
-
+.contact-map{
+    height:50vh;
+}
 
 /* ----------------------------------------------------Footer */
 .footer{

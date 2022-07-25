@@ -19,6 +19,8 @@
         Please note this form is intended for booking inquiries, for general contact
         check out our <a href="{% url 'contact' %}">Contact Page</a>
     </p>
+    <small>We cannot guarantee appointments on your requested date, however we will 
+        aim to get as close as possible.</small>
     <form method="post" style="margin:50px">
         {{ booking_form | crispy }}
         {% csrf_token %}

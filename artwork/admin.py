@@ -11,10 +11,13 @@ class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('caption',)}
     summernote_fields = ('description')
     list_filter = ('status', 'created_on')
-    actions = ['publish_posts']
+    actions = ['publish_posts', 'unpublish_posts']
 
     def publish_posts(self, request, queryset):
         queryset.update(status=1)
+    
+    def unpublish_posts(self, request, queryset):
+        queryset.update(status=0)
 
 
 @admin.register(Comment)
@@ -44,7 +47,7 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'subject', 'sent', 'replied')
+    list_display = ('name', 'subject', 'artist', 'sent', 'replied')
     list_filter = ('replied',)
     search_fields = ['name', 'email', 'subject']
     actions = ['mark_as_replied']

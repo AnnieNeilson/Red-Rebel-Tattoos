@@ -26,7 +26,7 @@ class BookingPage(View):
         if booking_form.is_valid():
             booking_form.instance.email = request.user.email
             booking_form.instance.name = request.user.username
-            booking_form.save() 
+            booking_form.save()
             return render(request, 'booking_successful.html',)
         else:
             booking_form = BookingForm()
@@ -53,8 +53,14 @@ class ContactPage(View):
         contact_form = ContactForm(data=request.POST)
         if contact_form.is_valid():
             contact_form.save() 
+            return render(request, 'contact_successful.html',)
         contact_form = ContactForm()
-        return render(request, 'contact_successful.html',)
+        return render(
+            request,
+            "contact.html",
+            {
+                "contact_form": ContactForm(),
+            },)
 
 
 class PostList(generic.ListView):

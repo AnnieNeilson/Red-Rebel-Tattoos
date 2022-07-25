@@ -18,14 +18,21 @@
 <article class="container light-text">
     <!-- About us-->
     <section id="about-us" class="home-sections">
-        <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        <h2>Welcome To Red Rebel Tattoos</h2>
+        <p id="about-us-text">
+            We are a team of professional tattooists, together we have over 100 years in tattooing experience!
+            <br>We are based in South Shields, <a href="{% url 'contact' %}">click here</a> to find us! 
+            We have been tattooing Sand Dancers and beyond for over 25 years.
+            We cover a broad range of styles, here at Red Rebel Tattoos you can be sure to find 
+            the design you are looking for. In our studio we have physical copies our each of our team member's portfolios.
+            Feel free to pop in anytime to peruse our work (we also have excellent coffee!)
+            We offer free consultations, whether this is your first tattoo or your fiftieth. 
+            You can use our <a href="{% url 'booking' %}">booking form</a> to arrange a consultation with a 
+            specific tattooist, if you have someone in mind!
+            <br>
+            <br>We pride ourselves on being a 5 star local health 
+            authority registered studio. We carry out all tattooing to the highest standard.
+        </p>
     </section>
     <!-- /.about us-->
     <!-- Quotes -->
@@ -33,19 +40,17 @@
         <h2>Our Customers Say...</h2>
         <div class="row">
             <blockquote class="blockquote col-md-4">
-                <p class="mb-0"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right"></i></p>
-                <footer class="blockquote-footer">Kirsty A</footer>
+                <p class="mb-0"><i class="fa fa-quote-left"></i> Hugely recommend Red Rebel Tattoo Studio, the place has such a love atmosphere. John did an amazing job of my tattoo which was to remember my late grandma! I love it so much. Thanks guys!<i class="fa fa-quote-right"></i></p>
+                <footer class="blockquote-footer">Dominika</footer>
             </blockquote>
             <blockquote class="blockquote col-md-4">
-                <p class="mb-0"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right"></i></p>
-                <footer class="blockquote-footer">Kirsty B</footer>
+                <p class="mb-0"><i class="fa fa-quote-left"></i> Love these guys! I've been getting tattooed here since 2015. Becky always does an amazing job, and it's always great seeing everyone
+                    <i class="fa fa-quote-right"></i></p>
+                <footer class="blockquote-footer">Annie</footer>
             </blockquote>
             <blockquote class="blockquote col-md-4">
-                <p class="mb-0"><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Integer posuere erat a ante. <i class="fa fa-quote-right"></i></p>
-                <footer class="blockquote-footer">Kirsty C</footer>
+                <p class="mb-0"><i class="fa fa-quote-left"></i> I'm gonna turn this into a carousel that takes reviews submitted to the site once they've been approved <i class="fa fa-quote-right"></i></p>
+                <footer class="blockquote-footer">Me</footer>
             </blockquote>
         </div>
     </section>
@@ -61,11 +66,11 @@
             </div>
             <div class="col-md-4 feature-link" id="faq-link">
                 <h3>Have a Question? <i class="fa fa-comments"></i></h3>
-                <p>Get in touch <a href="#">here...</a></p>
+                <p>Get in touch <a href="{% url 'contact' %}">here...</a></p>
             </div>
             <div class="col-md-4 feature-link" id="booking-link">
                 <h3>Book Now! <i class="fa fa-calendar-check"></i></h3>
-                <p>Get your journey with us started <a href="#">here...</a></p>
+                <p>Get your journey with us started <a href="{% url 'booking' %}">here...</a></p>
             </div>
         </div>
     </section>

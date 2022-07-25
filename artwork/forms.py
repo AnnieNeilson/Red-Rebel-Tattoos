@@ -15,7 +15,7 @@ class ContactForm(forms.ModelForm):
 
 
 class DateInput(forms.DateInput):
-    input_type = 'requested_date'
+    input_type = 'date'
 
 
 class BookingForm(forms.ModelForm):
@@ -23,5 +23,5 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ['artist', 'subject', 'requested_date', 'message']
         widgets = {
-            'requested_date': DateInput(),
+            'requested_date': DateInput()
         }
