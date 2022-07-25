@@ -29,11 +29,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 X_FRAME_ORIGINS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['red-rebel-tattoos.herokuapp.com', 'localhost']
+DJANGO_ALLOWED_HOSTS = ['red-rebel-tattoos.herokuapp.com', 'localhost']
 
 
 # Application definition
