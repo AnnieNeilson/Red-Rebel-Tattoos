@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from django.contrib.messages import constants as messages
 from .models import Post
 from .forms import CommentForm, ContactForm, BookingForm
 
@@ -25,11 +24,18 @@ class BookingPage(View):
     def post(self, request, *args, **kwargs):
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
-            # booking_form.instance.email = request.user.email
-            # booking_form.instance.name = request.user.username
+            booking_form.instance.email = request.user.email
+            booking_form.instance.name = request.user.username
             booking_form.save() 
-        
-        return render(request, 'booking_successful.html',)
+            return render(request, 'booking_successful.html',)
+        else:
+            booking_form = BookingForm()
+            return render(
+                request,
+                "booking.html",
+                {
+                    "booking_form": BookingForm(),
+                },)
 
 
 class ContactPage(View):

@@ -73,7 +73,7 @@ class Booking(models.Model):
     email = models.EmailField()
     artist = models.CharField(max_length=20, choices=ARTIST_CHOICES, default='any')
     subject = models.CharField(max_length=13, choices=SUBJECT_CHOICES, default='other')
-    date = models.DateField()
+    requested_date = models.DateField()
     message = models.TextField()
     sent = models.DateTimeField(auto_now_add=True)
     replied = models.BooleanField(default=False)

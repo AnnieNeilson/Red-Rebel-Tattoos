@@ -22,11 +22,6 @@ h1, h2, h3, h4, h5{
     text-align: center;
 }
 
-#msg {
-    position:absolute;
-    z-index: 1;
-    width:inherit;
-}
 
 /* ----------------------------------------------------Nav bar */
 .navbar-brand{
@@ -48,6 +43,13 @@ h1, h2, h3, h4, h5{
     position:absolute;
     width: 100%;
     z-index: 1;
+    margin-bottom: 0;
+}
+
+#msg {
+    position:absolute;
+    z-index: 2;
+    width:inherit;
 }
 
 .hero-image{
@@ -58,11 +60,10 @@ h1, h2, h3, h4, h5{
     width: 100%;
     margin: auto;
     position: relative;
+
     /* NEED MEDIA QUERIES FOR HEIGHT ADJUSTMENT FOR UNDER 700PX WIDTH */
 }
-.consultation-alert{
-    margin-bottom: 0;
-}
+
 
 header{
     margin: 0;
@@ -118,7 +119,7 @@ header h2{
     max-height: 80vh;
     object-fit:scale-down;
     justify-content: center; 
-    background-color: #292222; 
+    background-color: black; 
 }
 
 .like_button{
