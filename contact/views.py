@@ -1,6 +1,20 @@
 from django.shortcuts import render
 from django.views import View
+from .models import Review
 from .forms import ContactForm, BookingForm, ReviewForm
+
+
+class HomePage(View):
+    template_name = 'index.html'
+
+    def get(self, request, *args, **kwargs):
+        reviews = Review.objects.filter(approved=True)
+        return render(
+            request,
+            "index.html",
+            {
+                "reviews": reviews,
+            },)
 
 
 class BookingPage(View):

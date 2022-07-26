@@ -5,21 +5,6 @@ from .models import Post
 from .forms import CommentForm
 
 
-
-class HomePage(View):
-    template_name = 'index.html'
-
-    def get(self, request, *args, **kwargs):
-        reviews = Review.objects.filter(approved=True)
-        return render(
-            request,
-            "index.html",
-            {
-                "reviews": reviews,
-            },)
-
-
-
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
