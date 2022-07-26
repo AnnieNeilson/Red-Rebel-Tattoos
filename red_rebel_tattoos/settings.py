@@ -33,8 +33,7 @@ DEBUG = False
 
 X_FRAME_ORIGINS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['red-rebel-tattoos.herokuapp.com', 'localhost']
-DJANGO_ALLOWED_HOSTS = ['red-rebel-tattoos.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['red-rebel-tattoos.herokuapp.com/', 'localhost']
 
 
 # Application definition
