@@ -34,7 +34,7 @@ class ReviewAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'artist', 'sent', 'approved')
     list_filter = ('approved',)
     search_fields = ['name', 'artist']
-    actions = ['approve_comments']
+    actions = ['approve_review']
 
     def approve_review(self, request, queryset):
         queryset.update(approved=True)

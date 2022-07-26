@@ -55,7 +55,7 @@ class ContactPage(View):
             {
                 "contact_form": ContactForm(),
                 "review_form": ReviewForm(),
-                "reviewed" : False,
+                "reviewed": False,
             },)
 
     def post(self, request, *args, **kwargs):
@@ -76,7 +76,7 @@ class ContactPage(View):
                     {
                         "contact_form": ContactForm(),
                         "review_form": ReviewForm(),
-                        "reviewed" : True,
+                        "reviewed": True,
                     },)
         else:
             contact_form = ContactForm()
