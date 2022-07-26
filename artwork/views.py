@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post, Review
-from .forms import CommentForm, ContactForm, BookingForm, ReviewForm
+from .models import Post
+from .forms import CommentForm
 
 
 
@@ -18,77 +18,6 @@ class HomePage(View):
                 "reviews": reviews,
             },)
 
-class BookingPage(View):
-    template_name = 'booking.html'
-
-    def get(self, request, *args, **kwargs):
-        return render(
-            request,
-            "booking.html",
-            {
-                "booking_form": BookingForm(),
-            },)
-
-    def post(self, request, *args, **kwargs):
-        booking_form = BookingForm(data=request.POST)
-        if booking_form.is_valid():
-            booking_form.instance.email = request.user.email
-            booking_form.instance.name = request.user.username
-            booking_form.save()
-            return render(request, 'booking_successful.html',)
-        else:
-            booking_form = BookingForm()
-            return render(
-                request,
-                "booking.html",
-                {
-                    "booking_form": BookingForm(),
-                },)
-
-
-class ContactPage(View):
-    template_name = 'contact.html'
-
-    def get(self, request, *args, **kwargs):
-        return render(
-            request,
-            "contact.html",
-            {
-                "contact_form": ContactForm(),
-                "review_form": ReviewForm(),
-                "reviewed" : False,
-            },)
-
-    def post(self, request, *args, **kwargs):
-        if 'contact' in request.POST:
-            contact_form = ContactForm(data=request.POST)
-            if contact_form.is_valid():
-                contact_form.save() 
-                return render(request, 'contact_successful.html',)
-        elif 'review' in request.POST:
-            review_form = ReviewForm(data=request.POST)
-            if review_form.is_valid():
-                review_form.instance.email = request.user.email
-                review_form.instance.name = request.user.username
-                review_form.save() 
-                return render(
-                    request,
-                    "contact.html",
-                    {
-                        "contact_form": ContactForm(),
-                        "review_form": ReviewForm(),
-                        "reviewed" : True,
-                    },)
-        else:
-            contact_form = ContactForm()
-            review_form = ReviewForm()
-            return render(
-                request,
-                "contact.html",
-                {
-                    "contact_form": ContactForm(),
-                    "review_form": ReviewForm(),
-                },)
 
 
 class PostList(generic.ListView):
