@@ -1,6 +1,10 @@
+
+.dark-text{
+    color:#141414;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@200&family=Koulen&display=swap');
 
-/*---------------------------------------Universal styles-----*/
 body{
     font-family: "Exo", sans-serif;
     background-color: #6d0d0d;
@@ -11,9 +15,6 @@ h1, h2, h3, h4, h5{
     font-family: "Koulen", cursive;
 }
 
-.dark-text{
-    color:#141414;
-}
 
 .light-text{
     color:#d8d2d2;
