@@ -14,13 +14,13 @@
         <div class="row">
             <div class="col-md-12 img-fluid ">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/dl7iptr4y/image/upload/v1658136194/hero-image_ggid7b.jpg" width="100%"
-                    class=" post-image">
+                <img src="https://res.cloudinary.com/dl7iptr4y/image/upload/v1658136194/hero-image_ggid7b.jpg"
+                    width="100%" class=" post-image">
                 {% else %}
                 <img src="{{ post.featured_image.url }}" width="100%" class="post-image">
                 {% endif %}
             </div>
-            
+
         </div>
     </div>
 </div>
@@ -34,16 +34,15 @@
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" 
-                            method="POST">
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="artwork_id" value="{{post.slug}}"
-                                    class="like_button"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="artwork_id" value="{{post.slug}}" class="like_button"><i
+                                        class="fas fa-heart"></i></button>
 
                                 {% else %}
-                                <button type="submit" name="artwork_id" value="{{post.slug}}"
-                                    class="like_button"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="artwork_id" value="{{post.slug}}" class="like_button"><i
+                                        class="far fa-heart"></i></button>
 
                                 {% endif %}
                             </form>
@@ -72,7 +71,7 @@
     </div>
     <div class="row">
         <div class="col-md-6 card mb-4  mt-3 post-details-card">
-            
+
             <div class="card-body">
                 <h3>Comments:</h3>
                 {% for comment in comments %}
@@ -88,7 +87,7 @@
                 {% endfor %}
             </div>
         </div>
-        
+
         <div class="col-md-6 card mb-4  mt-3 post-details-card">
             <div class="card-body">
                 {% if commented %}
@@ -96,7 +95,7 @@
                     Your comment is awaiting approval
                 </div>
                 {% else %}
-                
+
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
@@ -106,7 +105,8 @@
                     <button type="submit" class="primaryAction">Submit</button>
                 </form>
                 {% else %}
-                <h3>Please <a href="{% url 'account_login' %}">Sign In</a> or <a href="{% url 'account_signup' %}">Sign Up</a> to leave a comment</h3>
+                <h3>Please <a href="{% url 'account_login' %}">Sign In</a> or <a href="{% url 'account_signup' %}">Sign
+                        Up</a> to leave a comment</h3>
                 {% endif %}
                 {% endif %}
             </div>

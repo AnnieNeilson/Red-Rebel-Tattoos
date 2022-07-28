@@ -43,9 +43,17 @@
             <hr>
             <ul class="navbar-nav navbar-right ml-auto">
                 {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle nav-username" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Signed in as {{ user.username }}
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <!-- <a class="dropdown-item nav-link" href="#">Account</a> -->
+                        <a class="dropdown-item nav-link" href="{% url 'account_logout' %}">Sign Out</a>
+                    </div>
                 </li>
+
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
@@ -97,7 +105,7 @@
     </footer>
 
     <script>
-        setTimeout(function(){
+        setTimeout(function () {
             let messages = document.getElementById('msg');
             let alert = new bootstrap.Alert(messages);
             alert.close();

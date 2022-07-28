@@ -3,7 +3,7 @@
 body{
     font-family: "Exo", sans-serif;
     background-color: #6d0d0d;
-    font-weight: 800;
+    font-weight:bold;
 }
 
 h1, h2, h3, h4, h5{
@@ -35,6 +35,13 @@ h1, h2, h3, h4, h5{
 
 .navbar-toggler{
     border: none;
+}
+
+.nav-username{
+    line-height: normal;
+    color: #ffcece;
+    margin: 0 0 0 0;
+    padding: 8px;
 }
 
 /* ----------------------------------------------------Header */
@@ -216,8 +223,3 @@ hr{
     padding-top: 35px;
 }
 
-@media only screen and (max-width: 800px) {
-    .nav-item{
-        
-    }
-  }
