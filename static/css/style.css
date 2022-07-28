@@ -91,7 +91,6 @@ header h2{
 
 .main-header{
     margin-bottom: 20px;
-    
     height:300px;
     background: url("https://res.cloudinary.com/dl7iptr4y/image/upload/v1658137215/header-photo_ll6h0s.jpg") no-repeat center;
     background-size: 600px;
@@ -104,9 +103,6 @@ header h2{
 
 /* ----------------------------------------------------Artwork Page */
 
-hr{
-    color: #0a0a0a;
-}
 
 .card-img-top {
     width: 100%;
@@ -195,13 +191,10 @@ hr{
     text-align: center;
 }
 
-/* #signup_form input{
-    margin-left: 10px;
-} */
 /* --------------------------------------CONTACT PAGE-------- */
 
 .contact-map{
-    height:50vh;
+    height:60vh;
 }
 
 /* ----------------------------------------------------Footer */

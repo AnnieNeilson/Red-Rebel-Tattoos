@@ -2,8 +2,9 @@ from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Contact, Booking, Review
 
-# Register your models here.
 
+# Admin controls for Contact inquiries submitted to the site.
+# Includes action where inquiries can be marked as replied
 @admin.register(Contact)
 class ContactAdmin(SummernoteModelAdmin):
 
@@ -16,6 +17,8 @@ class ContactAdmin(SummernoteModelAdmin):
         queryset.update(replied=True)
 
 
+# Admin controls for Booking inquiries submitted to the site.
+# Includes action where inquiries can be marked as replied
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
 
@@ -28,6 +31,8 @@ class BookingAdmin(admin.ModelAdmin):
         queryset.update(replied=True)
 
 
+# Admin controls for Reviews submitted to the site.
+# Includes action where reviews can be marked as approved
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
 

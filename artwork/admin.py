@@ -3,6 +3,8 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment
 
 
+# Admin controls for creating posts for the site.
+# Includes actions where posts can be published and unpublished
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
@@ -15,11 +17,13 @@ class PostAdmin(SummernoteModelAdmin):
 
     def publish_posts(self, request, queryset):
         queryset.update(status=1)
-    
+
     def unpublish_posts(self, request, queryset):
         queryset.update(status=0)
 
 
+# Admin controls for Comments submitted to the site.
+# Includes action where comments can be approved
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
 
@@ -30,5 +34,3 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
-
-

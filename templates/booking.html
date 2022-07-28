@@ -10,7 +10,7 @@
         <h2>Start your journey with us today!</h2>
     </div>
 </header>
-
+<!-- Booking form for signed in users-->
 <div class="container light-text text-center">
     {% if user.is_authenticated %}
 
@@ -19,16 +19,17 @@
         Please note this form is intended for booking inquiries, for general contact
         check out our <a href="{% url 'contact' %}">Contact Page</a>
     </p>
-    <small>We cannot guarantee appointments on your requested date, however we will 
+    <small>We cannot guarantee appointments on your requested date, however we will
         aim to get as close as possible.</small>
     <form method="post" style="margin:50px">
         {{ booking_form | crispy }}
         {% csrf_token %}
         <button type="submit" class="primaryAction">Submit</button>
     </form>
-
+    <!-- If user is not signed in a message encouraged to sign in or sign up -->
     {% else %}
-    <h3>Please <a href="{% url 'account_login' %}">Sign In</a> or <a href="{% url 'account_signup' %}">Sign Up</a> to submit a booking
+    <h3>Please <a href="{% url 'account_login' %}">Sign In</a> or <a href="{% url 'account_signup' %}">Sign Up</a> to
+        submit a booking
         inquiry.</h3>
     {% endif %}
 </div>

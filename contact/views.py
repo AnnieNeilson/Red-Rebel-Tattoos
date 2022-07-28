@@ -4,6 +4,8 @@ from .models import Review
 from .forms import ContactForm, BookingForm, ReviewForm
 
 
+# Homepage view, loads the homepage template and gets the reviews for the
+# carousel review section
 class HomePage(View):
     template_name = 'index.html'
 
@@ -17,6 +19,8 @@ class HomePage(View):
             },)
 
 
+# Booking page view, gets the template and form. Posts the user response to 
+# the staff/admin
 class BookingPage(View):
     template_name = 'booking.html'
 
@@ -45,6 +49,10 @@ class BookingPage(View):
                 },)
 
 
+# Contact page view, gets the template and form. Posts the user response to 
+# the staff/admin. Post function looks for the name attribute of the submit 
+# button used. Then received the information as either a contact inquiry or
+# a review 
 class ContactPage(View):
     template_name = 'contact.html'
 
@@ -62,14 +70,14 @@ class ContactPage(View):
         if 'contact' in request.POST:
             contact_form = ContactForm(data=request.POST)
             if contact_form.is_valid():
-                contact_form.save() 
+                contact_form.save()
                 return render(request, 'contact_successful.html',)
         elif 'review' in request.POST:
             review_form = ReviewForm(data=request.POST)
             if review_form.is_valid():
                 review_form.instance.email = request.user.email
                 review_form.instance.name = request.user.username
-                review_form.save() 
+                review_form.save()
                 return render(
                     request,
                     "contact.html",
