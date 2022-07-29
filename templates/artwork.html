@@ -24,7 +24,7 @@
                                 <img class="card-img-top"
                                     src="https://res.cloudinary.com/dl7iptr4y/image/upload/v1658136194/hero-image_ggid7b.jpg">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.slug }}">
+                                <img class="card-img-top" src=" {{ post.preview_image.url }}" alt="{{ post.slug }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Artwork by: {{ post.artist }}</p>

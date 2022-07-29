@@ -14,6 +14,7 @@ class Post(models.Model):
     description = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
+    preview_image = CloudinaryField('image', default='placeholder')
     likes = models.ManyToManyField(User, related_name="post_likes", blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 

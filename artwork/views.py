@@ -10,7 +10,6 @@ class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'artwork.html'
-    paginate_by = 9
 
 
 # View for the details of each post
