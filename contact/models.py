@@ -53,6 +53,6 @@ class Review(models.Model):
     email = models.EmailField()
     artist = models.CharField(max_length=20, choices=ARTIST_CHOICES,
                               default='any')
-    review = models.TextField(max_length=250)
+    review_content = models.TextField(max_length=250)
     sent = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)

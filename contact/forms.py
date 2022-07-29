@@ -13,7 +13,7 @@ class ContactForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['artist', 'review']
+        fields = ['artist', 'review_content']
 
 
 # Date input for booking form
