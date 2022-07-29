@@ -28,16 +28,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link" aria-label="Home page" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'artwork' %}">Artwork</a>
+                    <a class="nav-link" aria-label="Artwork page" href="{% url 'artwork' %}">Artwork</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'booking' %}">Bookings</a>
+                    <a class="nav-link" aria-label="Bookings page" href="{% url 'booking' %}">Bookings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    <a class="nav-link" aria-label="Contact page" href="{% url 'contact' %}">Contact</a>
                 </li>
 
             </ul>
@@ -51,16 +51,16 @@
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                         <!-- <a class="dropdown-item nav-link" href="#">Account</a> -->
-                        <a class="dropdown-item nav-link" href="{% url 'account_logout' %}">Sign Out</a>
+                        <a class="dropdown-item nav-link" aria-label="Sign out" href="{% url 'account_logout' %}">Sign Out</a>
                     </div>
                 </li>
 
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+                    <a class="nav-link" aria-label="Sign Up" href="{% url 'account_signup' %}">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
+                    <a class="nav-link" aria-label="Sign In" href="{% url 'account_login' %}">Sign In</a>
                 </li>
                 {% endif %}
 
@@ -95,11 +95,11 @@
             <div class="col-sm-12 footer-content">
                 <h5>Find us on your favourite social media</h5>
                 <br>
-                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook social-media-icons"></i></a>
-                <a href="https://www.instagram.com" target="_blank"><i
+                <a href="https://www.facebook.com" target="_blank" aria-label="Open Facebook"><i class="fa fa-facebook social-media-icons"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Open Instagram"><i
                         class="fa fa-instagram social-media-icons"></i></a>
-                <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter social-media-icons"></i></a>
-                <a href="https://www.pinterest.com" target="_blank"><i
+                <a href="https://www.twitter.com" target="_blank" aria-label="Open Twitter"><i class="fa fa-twitter social-media-icons"></i></a>
+                <a href="https://www.pinterest.com" target="_blank" aria-label="Open Pinterest"><i
                         class="fa fa-pinterest social-media-icons"></i></a>
             </div>
         </div>
