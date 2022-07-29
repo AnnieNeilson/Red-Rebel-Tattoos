@@ -15,9 +15,9 @@
             <div class="col-md-12 img-fluid ">
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://res.cloudinary.com/dl7iptr4y/image/upload/v1658136194/hero-image_ggid7b.jpg"
-                    width="100%" class=" post-image">
+                    width="100%" class="post-image" alt="Red Roses">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" width="100%" class="post-image">
+                <img src="{{ post.featured_image.url }}" width="100%" class="post-image" alt="{{ post.slug }}">
                 {% endif %}
             </div>
 
