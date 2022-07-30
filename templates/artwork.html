@@ -6,63 +6,42 @@
     <div class="main-header">
         <h1 class="center-text light-text">ArtWork</h1>
         <p class="center-text light-text">Check out the wonderful artwork done by our talented tattooists</p>
-        
+
     </div>
 </header>
 
 <div class="container-fluid">
     <!-- Artwork posts displayed here -->
     <div class="row">
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4 ">
-                    <div class="card mb-4 artwork-rows">
-                        <div class="card-body bg-dark">
-                            <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/dl7iptr4y/image/upload/v1658136194/hero-image_ggid7b.jpg">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.preview_image.url }}" alt="{{ post.slug }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Artwork by: {{ post.artist }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.caption }}</h2>
-                            </a>
-                            <p class="card-text ">{{ post.created_on}} <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
+        {% for post in post_list %}
+        <div class="col-md-4 ">
+            <div class="card mb-4 artwork-rows">
+                <div class="card-body bg-dark">
+                    <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top"
+                            src="https://res.cloudinary.com/dl7iptr4y/image/upload/v1658136194/hero-image_ggid7b.jpg">
+                        {% else %}
+                        <img class="card-img-top" src=" {{ post.preview_image.url }}" alt="{{ post.slug }}">
+                        {% endif %}
+                        <div class="image-flash">
+                            <p class="author">Artwork by: {{ post.artist }}</p>
                         </div>
                     </div>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        <h2 class="card-title">{{ post.caption }}</h2>
+                    </a>
+                    <p class="card-text ">{{ post.created_on}} <i class="far fa-heart"></i>
+                        {{ post.number_of_likes }}</p>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
             </div>
         </div>
+        {% if forloop.counter|divisibleby:3 %}
     </div>
-
-
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
-    </nav>
-
-    {% endif %}
-
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
 </div>
 {%endblock%}

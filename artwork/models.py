@@ -25,8 +25,8 @@ class Post(models.Model):
         return self.caption
 
     # Displays number of likes on a post
-    def number_of_likes(self):
-        return self.likes.count()
+    def number_of_likes(self):  # noqa
+        return self.likes.count()  
 
 
 # Model for Comments, displayed underneath post.
