@@ -81,9 +81,18 @@
                         <span class=" font-weight-normal">
                             {{ comment.created_on }}
                         </span> wrote:
+                        
                     </p>
+                    {% if comment.name == user.username %}
+                        <div class="comment-ud">
+                          <a class="btn btn-secondary btn-sm mt-1 mb-1" >Update</a>
+                          <a class="btn btn-danger btn-sm mt-1 mb-1">Delete</a>
+                        </div>
+                      {% endif %}
+                    
                     {{ comment.body | linebreaks }}
                 </div>
+
                 {% endfor %}
             </div>
         </div>
