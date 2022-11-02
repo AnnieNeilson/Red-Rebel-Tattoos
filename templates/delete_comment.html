@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<header>
+    <div class="main-header">
+        <h1>Delete Comment</h1>
+    </div>
+</header>
+
+<div class="container light-text center-text">
+    <p>Are you sure you want to cancel your comment : {{ comment.body}} </p>
+    <form method="POST">
+        {% csrf_token %}
+        <a><button class="btn btn-danger" type="submit">DELETE</button></a>
+        <a href="/">cancel</a>
+    </form>
+
+</div>
+<div>
+    
+                        <h5 class="card-title fw-bold">Musical Alert!</h5>
+                        
+                    </div>
+                </div>
+                <div class="text-center my-3">
+                    
+</div>
+
+{% endblock %}

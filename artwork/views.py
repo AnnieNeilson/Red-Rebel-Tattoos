@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm
+from django.contrib import messages
 
 
 # View that presents post on the artwork page, in a paginated list
@@ -81,4 +82,16 @@ class PostLike(View):
         else:
             post.likes.add(request.user)
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
- 
+
+
+def delete_comment(request, pk):
+    """
+    To render the booking cancel page and delete the booking in the database.
+    """
+    comment = Comment.objects.get(pk=pk)
+    if request.method == 'POST':
+        comment.delete()
+        messages.success(request, f'Your comment has been deleted.')
+        return redirect('artwork')
+
+    return render(request, 'delete_comment.html', {'comment': comment})
