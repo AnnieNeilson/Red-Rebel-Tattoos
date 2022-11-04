@@ -45,3 +45,4 @@ class Comment(models.Model):
     # Display the comment and username of commenter
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+ 

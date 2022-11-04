@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<header>
+    <div class="main-header">
+        <h1>Update Comment</h1>
+    </div>
+</header>
+
+<div class="container light-text center-text">
+    <h3>Update your comment here:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="POST" class="update-comment-form">
+                    
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="primaryAction">Update</button>
+                    <a href="{% url 'artwork' %}" class="primaryAction">Cancel</a>
+                </form>
+</div>    
+
+{% endblock %}

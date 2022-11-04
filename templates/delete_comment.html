@@ -11,22 +11,13 @@
 </header>
 
 <div class="container light-text center-text">
-    <p>Are you sure you want to cancel your comment : {{ comment.body}} </p>
+    <p>Are you sure you want to delete your comment: <br/>" {{ comment.body}} " ?</p>
     <form method="POST">
         {% csrf_token %}
-        <a><button class="btn btn-danger" type="submit">DELETE</button></a>
-        <a href="/">cancel</a>
+        <a><button class="deleteButton" type="submit">DELETE</button></a>
+        <a href="/artwork" class="primaryAction">cancel</a>
     </form>
 
-</div>
-<div>
-    
-                        <h5 class="card-title fw-bold">Musical Alert!</h5>
-                        
-                    </div>
-                </div>
-                <div class="text-center my-3">
-                    
-</div>
+</div>    
 
 {% endblock %}

@@ -91,7 +91,30 @@ def delete_comment(request, pk):
     comment = Comment.objects.get(pk=pk)
     if request.method == 'POST':
         comment.delete()
-        messages.success(request, f'Your comment has been deleted.')
+        messages.success(request, 'Your comment has been deleted.')
+
         return redirect('artwork')
 
     return render(request, 'delete_comment.html', {'comment': comment})
+
+
+def update_comment(request, pk, *args, **kwargs):
+    """
+    To render the booking cancel page and delete the booking in the database.
+    """
+    comment = Comment.objects.get(pk=pk)
+    comment_form = CommentForm(instance=comment, data=request.POST)
+    if request.method == 'POST':
+        if comment_form.is_valid():
+            comment.save()
+            messages.success(request, 'Your comment has been updated.')
+
+            return redirect('artwork')
+
+    return render(
+        request,
+        'update_comment.html',
+        {
+            'comment': comment,
+            'comment_form': CommentForm(instance=comment),
+        })

@@ -130,8 +130,8 @@ header h2{
     background-color: inherit;
 }
 
-.comment-ud{
-    margin-left: 50%;
+.update-comment-form{
+    text-align-last: center;
 }
 
 /* --------------------------HOME PAGE------------------------*/
@@ -187,6 +187,13 @@ header h2{
 .primaryAction{
     background-color: #292222;
     color:#d8d2d2;
+    outline: #141414;
+}
+
+.deleteButton{
+    background-color: #9b0000;
+    color:#d8d2d2;
+    outline: #141414;
 }
 
 .signout-column h1 p form{
