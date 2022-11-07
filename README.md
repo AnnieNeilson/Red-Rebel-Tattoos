@@ -20,6 +20,45 @@ The customer goals of this website are:
 
 ![iam.responsive screenshots](./images/AmIResponsive.PNG) 
 
+## Planning
+
+### Wireframes
+
+I used [Balsamiq](https://balsamiq.com/) to create these wireframes:  
+
+#### Home Page
+![Home Page wireframe](./images/wireframes/Homepage.PNG)  
+
+#### Artwork Page
+![Artwork Page wireframe](./images/wireframes/Tattoos%20page.PNG)
+
+#### Individual Posts
+![Post page wireframe](./images/wireframes/postpage.PNG)  
+
+The comments section is visible to all users. Signed in users have the option to comment.  
+![Post page wireframe](./images/wireframes/postcomments-signedin.PNG)   
+![Post page wireframe](./images/wireframes/postcomments-signedout.PNG)  
+  
+After submitting a comment the user is notified that their comment needs approval before being posted:  
+![Post page wireframe](./images/wireframes/commentsubmitted.PNG)
+
+#### Bookings Page
+If the user is not signed in they will be prompted to visit the sign in or up page to access the bookings feature
+![Bookings page wireframe](./images/wireframes/Bookings%20page.PNG)
+
+#### Contact Page
+![Contacts page wireframe](./images/wireframes/Contact-signedout.PNG)  
+The contact page features a review section but only if the user is signed in.  
+![Contacts page wireframe](./images/wireframes/Contact-signedin.PNG)  
+
+#### Sign Up Page
+![Sign up page wireframe](./images/wireframes/Sign%20Up.PNG)
+
+#### Sign In Page  
+![Sign in page wireframe](./images/wireframes/Sign%20in.PNG)
+
+
+
 ## Features
 
 ### Existing features
